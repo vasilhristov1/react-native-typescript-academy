@@ -1,0 +1,11 @@
+{
+  "name": "Blogs",
+  "version": "1.0.0",
+  "description": "Blogs page",
+  "main": "index.js",
+  "author": "Vasil Hristov",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

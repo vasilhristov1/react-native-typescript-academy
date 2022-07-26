@@ -1,0 +1,106 @@
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    background: gray;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+nav {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: black;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 25px;
+}
+
+nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.row {
+    display: flex;
+    row-gap: 30px;
+}
+
+main {
+    display: flex;
+    padding: 0 20px;
+}
+
+article {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+article h1 {
+    flex: 100%;
+}
+
+article h2 {
+    flex: 100%;
+}
+
+article .blog-text {
+    flex: 70%;
+    padding: 0 0 0 30px;
+}
+
+article .fakeimg {
+    width: 20%;
+    height: 200px;
+}
+
+footer {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #777;
+    color: white;
+}
+
+.imag {
+    background: #aaa;
+    width: 100%;
+    padding: 30px;
+    height: 200px;
+    text-align: center;
+}
+
+article .imag {
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-width: 600px) {
+    nav,
+    article,
+    aside {
+      width: 100%;
+      height: auto;
+    }
+  
+    #articles {
+      margin-left: 0;
+      margin-right: 0;
+    }
+}
+  
+@media (max-width: 960px) {
+    article {
+      width: 100%;
+      height: auto;
+    }
+}
