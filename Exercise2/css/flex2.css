@@ -101,3 +101,13 @@ article .imag {
         flex: 100%;
     }
 }
+
+@media (max-width: 960px) {
+    main {
+        flex: 100%;
+    }
+
+    article {
+        flex: 70%;
+    }
+}
