@@ -40,6 +40,25 @@ main {
     padding: 0 20px;
 }
 
+article {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+article h1 {
+    flex: 100%;
+}
+
+article .blog-text {
+    flex: 70%;
+    padding: 0 0 0 30px;
+}
+
+article .fakeimg {
+    width: 20%;
+    height: 200px;
+}
+
 aside {
     flex: 30%;
     margin-left: 1px dotted #ddd;
@@ -50,4 +69,31 @@ footer {
     padding: 10px 20px;
     text-align: center;
     background-color: #ddd;
+}
+
+.fakeimg {
+    background: #aaa;
+    width: 100%;
+    padding: 30px;
+    height: 200px;
+    text-align: center;
+}
+
+article .fakeimg {
+    width: 200px;
+    height: 200px;
+}
+
+.fakeimg.aside-small {
+    background: #aaa;
+    width: 40%;
+    padding: 10px;
+    height: 100px;
+}
+
+aside .Images {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    row-gap: 10px;
 }
