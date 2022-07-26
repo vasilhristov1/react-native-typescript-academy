@@ -32,17 +32,25 @@ nav a:hover {
 }
 
 .row {
+    clear: both;
     display: flex;
     row-gap: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 main {
+    column-count: 3;
     display: flex;
     padding: 0 20px;
+    flex: 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 article {
     display: flex;
+    flex: 30%;
     flex-flow: row wrap;
 }
 
@@ -85,22 +93,11 @@ article .imag {
 }
 
 @media (max-width: 600px) {
-    nav,
-    article,
-    aside {
-      width: 100%;
-      height: auto;
+    main {
+        flex: 100%;
     }
-  
-    #articles {
-      margin-left: 0;
-      margin-right: 0;
-    }
-}
-  
-@media (max-width: 960px) {
+
     article {
-      width: 100%;
-      height: auto;
+        flex: 100%;
     }
 }
