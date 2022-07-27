@@ -1,10 +1,10 @@
 // n is the count of numbers in the result sequence
 const myFibonacci = (n) => ({
     *[Symbol.iterator]() {
-        let i = 0, j = 1;
+        let i = 0, j = 0;
         for (let counter = 0; counter < n; counter++) {
-            [i, j] = [j, (i + j) || 1];
             yield j;
+            [i, j] = [j, (i + j) || 1];
         }
     }
 })
