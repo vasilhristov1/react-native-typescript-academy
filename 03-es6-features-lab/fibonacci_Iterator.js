@@ -22,6 +22,6 @@ const myFibonacci = (n) => ({
 });
 
 // for infinitive count of numbers you can write Infinity instead of 10
-for (var e of myFibonacci(Infinity)) {
+for (var e of myFibonacci(10)) {
     console.log(e);
 }
