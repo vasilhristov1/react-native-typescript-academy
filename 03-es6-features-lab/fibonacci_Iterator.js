@@ -1,3 +1,4 @@
+// n is the count of numbers in the result sequence
 const myFibonacci = (n) => ({
     [Symbol.iterator]() {
         let counter = 1;
@@ -20,6 +21,7 @@ const myFibonacci = (n) => ({
     }
 });
 
-for (var e of myFibonacci(10)) {
+// for infinitive count of numbers you can write Infinity instead of 10
+for (var e of myFibonacci(Infinity)) {
     console.log(e);
 }
