@@ -3,12 +3,14 @@ const myFibonacci = (n) => ({
     [Symbol.iterator]() {
         let counter = 1;
         let i = 0, j = 0;
+        let temp = 0;
         return {
             next() {
                 if (counter++ <= n) {
+                    temp = j;
                     [i, j] = [j, (i + j) || 1];
                     return {
-                        value: j, 
+                        value: temp, 
                         done: false
                     }
                 } else {
@@ -22,6 +24,6 @@ const myFibonacci = (n) => ({
 });
 
 // for infinitive count of numbers you can write Infinity instead of 10
-for (var e of myFibonacci(10)) {
+for (var e of myFibonacci(12)) {
     console.log(e);
 }
