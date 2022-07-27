@@ -26,17 +26,27 @@ class User extends Person {
     }
 
     toString() { // overriding
-        // if (this.role == 0) {
-        //     this.role = 'READER';
-        // } else if (this.role == 1) {
-        //     this.role = 'AUTHOR';
-        // } else if (this.role == 2) {
-        //     this.role = 'ADMIN';
-        // } else {
-        //     this.role = 'undefined';
-        // }
         return `${super.toString()}, Username: ${this.username}, Password: ${this.password}, Role: ${Role[this.role]}`;
     }
+}
+
+const changePassword = function(newPassword) {
+    this.password = newPassword;
+}
+
+const SUPER_ADMIN = {
+    __proto__: User.prototype,
+    id: 0,
+    fName: 'Default', 
+    lName: 'Admin',
+    address: 'BG',
+    username: 'admin',
+    password: 'admin',
+    role: ADMIN,
+    toString() { 
+        return `SUPERUSER: ${super.toString()}`;
+    }, 
+    changePassword
 }
 
 const p1 = new Person('John', 'Doe', 'London');
@@ -48,3 +58,6 @@ const u3 = new User('Georgi', 'Hristov', 'Plovdiv', 'georgi', 'georgi123', AUTHO
 
 const people = [p1, p2, u1, u2, u3];
 people.forEach(p => console.log(p.toString()));
+console.log(SUPER_ADMIN.toString());
+SUPER_ADMIN.changePassword('admin123');
+console.log(SUPER_ADMIN.toString());
