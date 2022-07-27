@@ -12,8 +12,17 @@ class Person {
         this.lName = lName;
         this.address = address;
     }
+
+    // #getFullName() {
+    //     return `${this.fName} ${this.lName}`;
+    // }
+
+    // toString() {
+    //     return `ID: ${this.id}, Name: ${this.#getFullName()}, Address: ${this.address}`;
+    // }
+
     toString() {
-        return `ID: ${this.id}, Name: ${this.fName + ' ' + this.lName}, Address: ${this.address}`;
+        return `ID: ${this.id}, Name: ${this.fName} ${this.lName}, Address: ${this.address}`;
     }
 }
 
