@@ -18,7 +18,7 @@ async function init() {
             return img;
         });
         await new Promise((resolve, reject) => {
-            setTimeout(resolve, 3000);
+            setTimeout(resolve, 10000);
         });
         images.forEach(img => resultsElem.removeChild(img));
     } finally {

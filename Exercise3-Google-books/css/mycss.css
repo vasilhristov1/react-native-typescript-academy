@@ -1,0 +1,134 @@
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+header {
+    background: gray;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+nav {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: black;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 25px;
+}
+
+nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+nav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-bottom: 8px;
+    font-size: 17px;
+  }
+
+#row {
+    clear: both;
+    display: flex;
+    row-gap: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main {
+    column-count: 3;
+    display: flex;
+    padding: 0 20px;
+    flex: 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+article {
+    display: flex;
+    flex: 30%;
+    flex-flow: row wrap;
+    border: 2px solid gray;
+    padding: 10px;
+}
+
+article h1 {
+    flex: 100%;
+}
+
+article h2 {
+    flex: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+article h3 {
+    flex: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+article .blog-text {
+    flex: 70%;
+    padding: 0 0 0 30px;
+}
+
+article .fakeimg {
+    width: 20%;
+    height: 200px;
+}
+
+footer {
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #777;
+    color: white;
+}
+
+.imag {
+    /* background: #aaa; */
+    width: 100%;
+    padding: 30px;
+    height: 200px;
+    text-align: center;
+}
+
+article .imag {
+    width: 200px;
+    height: 300px;
+}
+
+@media (max-width: 600px) {
+    main {
+        flex: 100%;
+    }
+
+    article {
+        flex: 100%;
+    }
+}
+
+@media (max-width: 960px) {
+    main {
+        flex: 100%;
+    }
+
+    article {
+        flex: 70%;
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Exercise3-Google-books",
+  "version": "1.0.0",
+  "description": "Page with books",
+  "main": "index.js",
+  "repository": "https://github.com/vasilhristov1/react-native-typescript-academy.git",
+  "author": "Vasil Hristov",
+  "license": "MIT",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
