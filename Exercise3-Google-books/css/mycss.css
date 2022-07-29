@@ -53,17 +53,6 @@ form.example input[type=text] {
     border-left: none; /* Prevent double borders */
     cursor: pointer;
   }
-  
-  form.example button:hover {
-    background: #0b7dda;
-  }
-  
-  /* Clear floats */
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
 
 #row {
     clear: both;
@@ -124,7 +113,6 @@ footer {
 }
 
 .imag {
-    /* background: #aaa; */
     width: 100%;
     padding: 30px;
     height: 200px;

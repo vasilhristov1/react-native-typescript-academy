@@ -1,0 +1,117 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "content": "JSON Server is easy ...",
+      "tags": [
+        "json-server",
+        "rest",
+        "api"
+      ],
+      "imageUrl": "https://i.morioh.com/210331/a1db17a5.webp",
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "content": "JSON Server is easy ...",
+      "tags": [
+        "javascript",
+        "es6",
+        "class"
+      ],
+      "imageUrl": "https://i.morioh.com/210331/a1db17a5.webp",
+      "authorId": 1
+    },
+    {
+      "title": "Using REST Client",
+      "content": "REST Client is easy ...",
+      "tags": [
+        "rest-client",
+        "rest",
+        "http",
+        "crud"
+      ],
+      "imageUrl": "https://humao.gallerycdn.vsassets.io/extensions/humao/rest-client/0.25.0/1655829100763/Microsoft.VisualStudio.Services.Icons.Default",
+      "authorId": 1,
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "0": {
+        "id": 1,
+        "title": "json-server",
+        "content": "JSON Server is easy ...",
+        "tags": [
+          "json-server",
+          "rest",
+          "api"
+        ],
+        "imageUrl": "https://i.morioh.com/210331/a1db17a5.webp",
+        "authorId": 1
+      },
+      "1": {
+        "id": 2,
+        "title": "json-server",
+        "content": "JSON Server is easy ...",
+        "tags": [
+          "javascript",
+          "es6",
+          "class"
+        ],
+        "imageUrl": "https://i.morioh.com/210331/a1db17a5.webp",
+        "authorId": 1
+      },
+      "2": {
+        "title": "Using REST Client",
+        "content": "REST Client is easy ...",
+        "tags": [
+          "rest-client",
+          "rest",
+          "http",
+          "crud"
+        ],
+        "imageUrl": "https://humao.gallerycdn.vsassets.io/extensions/humao/rest-client/0.25.0/1655829100763/Microsoft.VisualStudio.Services.Icons.Default",
+        "authorId": 1,
+        "id": 2
+      },
+      "3": {
+        "id": 3
+      },
+      "4": {
+        "title": "Promises vs Async",
+        "content": "Async syntax may look easier ...",
+        "tags": [
+          "async",
+          "await",
+          "promise",
+          "es6"
+        ],
+        "imageUrl": "https://humao.gallerycdn.vsassets.io/extensions/humao/rest-client/0.25.0/1655829100763/Microsoft.VisualStudio.Services.Icons.Default",
+        "authorId": 1,
+        "id": 4
+      },
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Smith",
+      "username": "john",
+      "password": "john123",
+      "role": "ADMIN"
+    }
+  ]
+}
