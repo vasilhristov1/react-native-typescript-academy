@@ -38,4 +38,5 @@ async function init() {
       console.log("Demo finished");
     }
   }
+  
   init();
