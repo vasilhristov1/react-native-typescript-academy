@@ -13,18 +13,6 @@
       "authorId": 1
     },
     {
-      "id": 2,
-      "title": "Classes in ES6+",
-      "content": "Class syntax in ES6+ is very neat ...",
-      "tags": [
-        "javascript",
-        "es6",
-        "class"
-      ],
-      "imageUrl": "https://res.cloudinary.com/practicaldev/image/fetch/s--Iz3e8EkG--/c_imagga_scale,f_auto,fl_progressive,h_1080,q_auto,w_1080/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/azhvn8vuqrofsidykaas.jpg",
-      "authorId": 1
-    },
-    {
       "id": 3,
       "title": "REST Client Super Advanced",
       "content": "REST Client is relatively easy ...",
@@ -49,16 +37,6 @@
       "id": 8
     },
     {
-      "title": "sxsa",
-      "authorId": "1",
-      "content": "qswqsq",
-      "imageUrl": "https://assets.logitech.com/assets/64683/performance-mouse-mx.png",
-      "tags": [
-        "aaa"
-      ],
-      "id": 9
-    },
-    {
       "title": "ddew",
       "authorId": "1",
       "content": "edwwedew",
@@ -67,11 +45,13 @@
       "id": 10
     },
     {
-      "title": "ddew",
-      "authorId": "1",
+      "title": "ddew fsgssgsg",
       "content": "edwwedew",
+      "tags": [
+        ""
+      ],
       "imageUrl": "https://assets.logitech.com/assets/64683/performance-mouse-mx.png",
-      "tags": [],
+      "authorId": 1,
       "id": 11
     },
     {
@@ -160,6 +140,18 @@
         "ccc"
       ],
       "id": 22
+    },
+    {
+      "title": "My blog",
+      "content": "afskmsfngjklkfjslg",
+      "tags": [
+        "learn",
+        "mood",
+        "vibe"
+      ],
+      "imageUrl": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      "authorId": 15,
+      "id": 23
     }
   ],
   "comments": [
