@@ -1,11 +1,18 @@
-import { Post } from "./posts";
+import { Post } from "./posts.js";
+import { ValidationConfig, Validators } from "./validate.js";
 
 export interface AppState {
     editedPost: Post | undefined;
-    allPosts: Post[]
-  }
-  
-  export const AppStateStore: AppState = {
+    allPosts: Post[],
+    postFormValidationConfig: ValidationConfig<Post>,
+    postFormErrors: string[]
+}
+
+export const AppStateStore: AppState = {
     editedPost: undefined,
-    allPosts: []
-  }
+    allPosts: [],
+    postFormValidationConfig: {
+        title: Validators.required()
+    },
+    postFormErrors: []
+}

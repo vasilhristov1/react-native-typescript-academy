@@ -1,4 +1,4 @@
-type Identifiable<K> = {id: K}
+type Identifiable<K> = {id: K }
 
 export interface Repository<K, V extends Identifiable<K>> {
     findAll(): V[];
@@ -14,7 +14,7 @@ interface IdGenerator<K> {
 }
 
 export class NumberIdGenerator implements IdGenerator<number> {
-    private nextId: number = 0;
+    private nextId = 0;
 
     getNextId(): number {
         return ++ this.nextId;
@@ -22,10 +22,10 @@ export class NumberIdGenerator implements IdGenerator<number> {
 }
 
 export class RepositoryInMemoryImpl<K, V extends Identifiable<K>> implements Repository<K, V> {
-    private entities = new Map<K, V>();
-    
-    constructor(private idGenerator: IdGenerator<K>) {} // DI
+    private entities = new Map<K,V>();
 
+    constructor(private idGenerator: IdGenerator<K>) {} // DI
+    
     findAll(): V[] {
         return Array.from(this.entities.values());
     }
@@ -38,17 +38,16 @@ export class RepositoryInMemoryImpl<K, V extends Identifiable<K>> implements Rep
         return entity;
     }
     update(entity: V): V | undefined {
-        if (!this.findById(entity.id)) {
+        if(!this.findById(entity.id)) {
             return undefined;
         }
         
         this.entities.set(entity.id, entity);
         return entity;
     }
-    deleteById(id: K): V | undefined{
+    deleteById(id: K): V | undefined {
         const old = this.findById(id);
-
-        if (old) {
+        if(old) {
             this.entities.delete(id);
         }
         return old;
@@ -56,4 +55,5 @@ export class RepositoryInMemoryImpl<K, V extends Identifiable<K>> implements Rep
     count(): number {
         return this.entities.size;
     }
+
 }
