@@ -1,7 +1,7 @@
 import { Post } from "./posts";
 
 export type ValidationConfig<T> = {
-    [P in keyof T]?: Validator //| Validator[]
+    [P in keyof T]?: Validator | Validator[]
 }
 
 export type ValidationResult<T> = {
@@ -26,7 +26,7 @@ export class Validators {
         }
     }
     static pattern: ValidatorFactory = (validationPattern: RegExp) => (value: string, field: string) => {
-        if(!validationPattern.test(value)) {
+        if(!value.match(validationPattern)) {
             throw `The field '${field}' does not match pattern '${validationPattern}'`
         }
     }
@@ -34,7 +34,7 @@ export class Validators {
         if(value.length < min) {
             throw `The field '${field}' should be at least ${min} characters long`
         } else if (value.length > max) {
-            throw `The field '${field}' should be no more tan ${max} characters long`
+            throw `The field '${field}' should be no more than ${max} characters long`
         }
     }
 }

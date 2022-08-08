@@ -39,7 +39,11 @@ class BlogsController {
   }
 
   showError(err: any) {
-    this.erorrsDiv.innerHTML = `<div>${err}</div>`;
+    if(!err) {
+      this.erorrsDiv.innerHTML = ''
+    } else {
+      this.erorrsDiv.innerHTML = `<div>${err}</div>`;
+    }
   }
 
   addPostDOM(post: Post) {
@@ -157,8 +161,21 @@ class BlogsController {
     for (field in config) {
       const validator = config[field];
       if(validator !== undefined) {
-        try{
-          validator(formSnapshot[field]!.toString(), field);
+        try {
+          if (Array.isArray(validator)) {
+            for (const valid of validator) {
+              try {
+                valid(formSnapshot[field]!.toString(), field);
+              } catch(erro) {
+                if(validationResult[field] === undefined) {
+                  validationResult[field] = [] as Array<string>;
+                }
+                validationResult[field]!.push(erro as string);
+              }
+            }
+          } else {
+            validator(formSnapshot[field]!.toString(), field);
+          }
         } catch(err) {
           validationResult[field] = [err as string];
         }
@@ -178,7 +195,7 @@ class BlogsController {
         }
       }
     }
-    this.showError(AppStateStore.postFormErrors);
+    this.showError(AppStateStore.postFormErrors.join(''));
   }
 }
 
