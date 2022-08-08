@@ -1,15 +1,15 @@
 import { Repository, RepositoryInMemoryImpl } from './repository.js';
 import { IdType } from "./shared-types.js";
 
-// export class PostCreateDto {
-//     constructor(
-//         public title: string,
-//         public content: string,
-//         public tags: string[],
-//         public imageUrl: string,
-//         public authorId: IdType
-//     ) { }
-// }
+export class PostCreateDto {
+    constructor(
+        public title: string,
+        public content: string,
+        public tags: string[],
+        public imageUrl: string,
+        public authorId: IdType
+    ) { }
+}
 
 export class Post {
     constructor(

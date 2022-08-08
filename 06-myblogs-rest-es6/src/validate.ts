@@ -1,4 +1,5 @@
 import { Post } from "./posts";
+import { Optional } from "./shared-types";
 
 export type ValidationConfig<T> = {
     [P in keyof T]?: Validator | Validator[]
@@ -8,6 +9,26 @@ export type ValidationResult<T> = {
     [P in keyof T]?: string[]
 }
 
+export type FormState<T> = {
+    [P in keyof T]?: FormFieldState;
+}
+
+export class FormFieldState {
+    constructor(
+    public valid: ValidStatus,
+    public changed: ChangedStatus
+    ) { }
+}
+
+export enum ValidStatus {
+    INVALID, 
+    VALID
+}
+
+export enum ChangedStatus {
+    PRISTINE,
+    DIRTY
+}
 
 export type Validator = (value: string, field: string) => void;
 
