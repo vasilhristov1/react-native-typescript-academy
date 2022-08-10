@@ -1,0 +1,27 @@
+GET   http://localhost:4000/users HTTP/1.1
+
+###
+
+POST http://localhost:4000/users HTTP/1.1
+content-type: application/json
+
+{
+    "title": "json-server",
+    "author": "typicode",
+
+    "firstName": "No first name",
+    "lastName": "No last name",
+    "username": "No username",
+    "password": "No password",
+    "gender": "No gender",
+    "userRole": "No user role",
+    "imageUrl": "No image URL",
+    "description": "No description",
+    "status": "No status",
+    "registrationTimestamp": "No registration timestamp",
+    "modificationTimestamp": "No modification timestamp"
+}
+
+
+###
+DELETE http://localhost:4000/users/4 HTTP/1.1
