@@ -1,4 +1,4 @@
-import { Todo, TodoStatus } from "./todo.model";
+import { Todo } from "./todo.model";
 import { FilterType, TodoListener } from "./TodoApp";
 import TodoItem from "./TodoItem";
 import './TodoList.css'
