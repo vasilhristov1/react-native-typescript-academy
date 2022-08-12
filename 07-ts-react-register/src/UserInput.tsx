@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { User, UserRole } from './user.model';
-import { TodoListener } from './TodoApp';
+import { UserListener } from './UserApp';
 
-interface TodoInputProps {
-    onCreateTodo: TodoListener
+interface UserInputProps {
+    onCreateUser: UserListener
 }
 
-interface TodoInputState {
+interface UserInputState {
     firstName: string;
     lastName: string;
     username: string;
@@ -16,8 +16,8 @@ interface TodoInputState {
     description: string;
 }
 
-class TodoInput extends Component<TodoInputProps, TodoInputState> {
-    state: Readonly<TodoInputState> = {
+class UserInput extends Component<UserInputProps, UserInputState> {
+    state: Readonly<UserInputState> = {
         firstName: '',
         lastName: '',
         username: '',
@@ -26,9 +26,9 @@ class TodoInput extends Component<TodoInputProps, TodoInputState> {
         pictureUrl: '',
         description: ''
     }
-    handleTodoSubmit = (event: React.FormEvent) => {
+    handleUserSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        this.props.onCreateTodo(new User(this.state.firstName, this.state.lastName, this.state.username, this.state.password, this.state.gender, this.state.pictureUrl, this.state.description, UserRole.USER));
+        this.props.onCreateUser(new User(this.state.firstName, this.state.lastName, this.state.username, this.state.password, this.state.gender, this.state.pictureUrl, this.state.description, UserRole.USER));
         this.setState({firstName: '',
         lastName: '',
         username: '',
@@ -39,12 +39,12 @@ class TodoInput extends Component<TodoInputProps, TodoInputState> {
     }
 
     handleTextChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const fieldName = event.target.name as keyof TodoInputState & string;
-        const stateUpdate = {[fieldName]: event.target.value} as unknown as TodoInputState;
+        const fieldName = event.target.name as keyof UserInputState & string;
+        const stateUpdate = {[fieldName]: event.target.value} as unknown as UserInputState;
         this.setState(stateUpdate);
     }
 
-    handletodoReset = (event: React.MouseEvent) => {
+    handleuserReset = (event: React.MouseEvent) => {
         event.preventDefault();
         this.setState({firstName: '',
         lastName: '',
@@ -57,7 +57,7 @@ class TodoInput extends Component<TodoInputProps, TodoInputState> {
 
     render() {
         return (
-            <form className="RegisterInput-form" onSubmit={this.handleTodoSubmit}>
+            <form className="RegisterInput-form" onSubmit={this.handleUserSubmit}>
                 <div className="row">
                     <div className="input-field col s6">
                         <input type="text" id="RegisterInput-user-fName" name="firstName" value={this.state.firstName}
@@ -104,10 +104,10 @@ class TodoInput extends Component<TodoInputProps, TodoInputState> {
                     </div>
                 </div>
                 <button className="btn waves-effect waves-light" type="submit" name="submit">Sign in</button>
-                <button className="btn waves-effect waves-light" type="reset" onClick={this.handletodoReset} name="submit">Reset</button>
+                <button className="btn waves-effect waves-light" type="reset" onClick={this.handleuserReset} name="submit">Reset</button>
             </form>
         );
     }
 }
 
-export default TodoInput;
+export default UserInput;

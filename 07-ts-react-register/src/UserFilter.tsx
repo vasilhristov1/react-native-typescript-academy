@@ -1,14 +1,14 @@
 import React from "react";
 import { UserStatus } from "./user.model";
-import { FilterChangeListener, FilterType } from "./TodoApp";
-import './TodoFilter.css'
+import { FilterChangeListener, FilterType } from "./UserApp";
+import './UserFilter.css'
 
-interface TodoFilterProps {
+interface UserFilterProps {
     filter: FilterType;
     onFilterChange: FilterChangeListener;
 }
 
-export default function TodoFilter({filter, onFilterChange}: TodoFilterProps) {
+export default function UserFilter({filter, onFilterChange}: UserFilterProps) {
     function handleFilterChange(event: React.ChangeEvent<HTMLSelectElement>) {
         onFilterChange(event.target.value === '0' ? undefined: parseInt(event.target.value))
     }
