@@ -21,9 +21,14 @@ const TodoItem = ({ todo,onUpdate, onDelete }: TodoItemProps) => {
     return (
         <div className="TodoItem">
             <span className="TodoItem-text">
-                <span className="TodoItem-id">{todo.id}</span>
-                Name: {todo.firstName} {todo.lastName}
-                <img src={todo.pictureUrl} alt="profile_picture" />
+                <div className="TodoItem-NameId">
+                    <span className="TodoItem-id">{todo.id}.</span>
+                    <span className="TodoItem-name">Name: {todo.firstName} {todo.lastName}</span>
+                </div>
+                <div className="TodoItem-gender">Gender: {todo.gender}</div>
+                <div className="TodoItem-username">Username: {todo.username}</div>
+                <div className="TodoItem-img"><img className="profile-img" src={todo.pictureUrl} alt="profile_picture" /></div>
+                <div className="TodoItem-description">User description: {todo.description}</div>
             </span>
             <span className="TodoItem-right">
                 <span className="TodoItem-status">{UserStatus[todo.status]}</span>
@@ -34,12 +39,12 @@ const TodoItem = ({ todo,onUpdate, onDelete }: TodoItemProps) => {
                         <span className="TodoItem-button fas fa-times-circle danger"
                         onClick={handleCancelation}></span>
                         </span>): (
-                    <span className="TodoItem-button fas fa-times-circle danger"
+                    <span className="TodoItem-button fa-solid fa-trash danger"
                         onClick={() => onDelete(todo)}></span>)
                 }
             </span>
         </div >
     )
-}
+}// fas fa-times-circle
 
 export default TodoItem

@@ -18,6 +18,10 @@
       rgba(112, 111, 111, 0)
     );
   }
+
+  .TodoItem-text {
+    align-self: center;
+  }
   
   .TodoItem-id {
       padding-right: 10px;
@@ -40,4 +44,9 @@
   
   .TodoItem-button.danger:hover {
     color: rgb(255, 35, 21)
+  }
+
+  .profile-img {
+    height: auto;
+    width: 100px;
   }

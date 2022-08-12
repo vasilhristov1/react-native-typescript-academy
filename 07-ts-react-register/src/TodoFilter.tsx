@@ -17,8 +17,8 @@ export default function TodoFilter({filter, onFilterChange}: TodoFilterProps) {
         <select value={filter} onChange={handleFilterChange} className="TodoFilter">
             <option value='0'>ALL</option>
             <option value={UserStatus.ACTIVE}>Active</option>
-            <option value={UserStatus.SUSPENDED}>Compleated</option>
-            <option value={UserStatus.DEACTIVATED}>Canceled</option>
+            <option value={UserStatus.SUSPENDED}>Suspended</option>
+            <option value={UserStatus.DEACTIVATED}>Deactivated</option>
         </select>
     );
 }

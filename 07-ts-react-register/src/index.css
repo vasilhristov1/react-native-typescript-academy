@@ -27,10 +27,10 @@ code {
 }
 
 
-input[type=text], input[type=date], input[type=password], select {
+input[type=text], input[type=password], select {
   font-size: 16pt;
   width: 100%;
-  padding: 12px 20px;
+  padding: 5px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
