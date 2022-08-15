@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
 import { Todo, TodoStatus } from './todo.model';
+import MOCK_TODOS from './mock-todos';
 import TodoList from './TodoList';
 import TodoInput from './TodoInput';
 import TodoFilter from './TodoFilter';
 import { TodosAPI } from './rest-api-client';
+import TodoInputFunction from './TodoInputFunction';
 
 
 export type FilterType = TodoStatus | undefined;
@@ -40,7 +43,7 @@ class TodoApp extends Component<{}, TodoAppState> {
       const allTodos = await TodosAPI.findAll();
       this.setState({ todos: allTodos, errors: undefined })
     } catch (err) {
-      this.setState({ errors: (err as any).toString() })
+      this.setState({ errors: err as string })
     }
   }
 
@@ -50,16 +53,28 @@ class TodoApp extends Component<{}, TodoAppState> {
     }))
   }
 
-  handleDeleteTodo = (todo: Todo) => {
-    this.setState(({ todos }) => ({
-      todos: todos.filter(td => td.id !== todo.id)
-    }))
+  handleDeleteTodo = async (todo: Todo) => {
+    try {
+      await TodosAPI.deleteById(todo.id);
+      this.setState(({ todos }) => ({
+        todos: todos.filter(td => td.id !== todo.id),
+        errors: undefined
+      }));
+    } catch (err) {
+      this.setState({ errors: err as string })
+    }
   }
 
-  handleCreateTodo = (todo: Todo) => {
-    this.setState(({ todos }) => ({
-      todos: todos.concat(todo)
-    }))
+  handleCreateTodo = async (todo: Todo) => {
+    try {
+      const created = await TodosAPI.create(todo);
+      this.setState(({ todos }) => ({
+        todos: todos.concat(created),
+        errors: undefined
+      }));
+    } catch (err) {
+      this.setState({ errors: err as string })
+    }
   }
 
   handlefilterChange = (status: FilterType) => {
@@ -72,7 +87,7 @@ class TodoApp extends Component<{}, TodoAppState> {
         <header className="App-header">
           <h2>TODO Demo</h2>
           {this.state.errors && <div className="errors">{this.state.errors}</div>}
-          <TodoInput onCreateTodo={this.handleCreateTodo} />
+          <TodoInputFunction onCreateTodo={this.handleCreateTodo} />
           <TodoFilter filter={this.state.filter} onFilterChange={this.handlefilterChange} />
           <TodoList
             todos={this.state.todos}
