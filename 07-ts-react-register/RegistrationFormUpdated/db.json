@@ -1,28 +1,16 @@
 {
   "users": [
     {
-      "firstName": "",
-      "lastName": "",
-      "username": "",
-      "password": "",
-      "gender": "",
-      "pictureUrl": "trrhh",
-      "description": "",
+      "firstName": "Ivan",
+      "lastName": "sffd",
+      "username": "sffd",
+      "password": "sffd",
+      "gender": "sffd",
+      "pictureUrl": "sffd",
+      "description": "sffd",
+      "id": 6,
       "role": 1,
-      "status": 1,
-      "id": 5
-    },
-    {
-      "firstName": "sffd",
-      "lastName": "",
-      "username": "",
-      "password": "",
-      "gender": "",
-      "pictureUrl": "trrhh",
-      "description": "",
-      "role": 1,
-      "status": 1,
-      "id": 6
+      "status": 1
     },
     {
       "firstName": "Naruto",
@@ -51,14 +39,14 @@
     {
       "firstName": "Vasil",
       "lastName": "Ivanov",
-      "username": "vasiljh",
+      "username": "vasiljh123",
       "password": "112134",
       "gender": "Male",
       "pictureUrl": "https://fantasytopics.com/wp-content/uploads/2022/04/Naruto-Baryon-Mode.webp",
       "description": "Unknown",
+      "id": 9,
       "role": 1,
-      "status": 1,
-      "id": 9
+      "status": 1
     }
   ]
 }

@@ -5,7 +5,7 @@ import { User, UserStatus } from './user.model';
 import UserList from './UserList';
 import UserInput from './UserInput';
 import UserFilter from './UserFilter';
-import { TodosAPI } from './rest-api-client';
+import { UsersAPI } from './rest-api-client';
 import { Optional } from './shared-types';
 
 
@@ -41,7 +41,7 @@ class UserApp extends Component<{}, UserAppState> {
 
   async componentDidMount() {
     try {
-      const allUsers = await TodosAPI.findAll();
+      const allUsers = await UsersAPI.findAll();
       this.setState({ users: allUsers, errors: undefined })
     } catch (err) {
       this.setState({ errors: err as string })
@@ -56,7 +56,7 @@ class UserApp extends Component<{}, UserAppState> {
 
   handleDeleteUser = async (user: User) => {
     try {
-      await TodosAPI.deleteById(user.id);
+      await UsersAPI.deleteById(user.id);
       this.setState(({ users }) => ({
         users: users.filter(td => td.id !== user.id),
         errors: undefined
@@ -69,14 +69,14 @@ class UserApp extends Component<{}, UserAppState> {
   handleCreateUser = async (user: User) => {
     try {
       if (user.id) { //edit todo
-        const updated = await TodosAPI.update(user);
+        const updated = await UsersAPI.update(user);
         this.setState(({ users }) => ({
           users: users.map(td => td.id === updated.id ? updated : td),
           errors: undefined,
           editedUser: undefined
         }))
       } else { // create todo
-        const created = await TodosAPI.create(user);
+        const created = await UsersAPI.create(user);
         this.setState(({ users }) => ({
           users: users.concat(created),
           errors: undefined

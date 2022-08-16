@@ -23,12 +23,12 @@ class UserInput extends Component<UserInputProps, UserInputState> {
     state: Readonly<UserInputState> = {
         id: this.props.user?.id?.toString() || '',
         firstName: this.props.user?.firstName || '',
-        lastName: this.props.user?.firstName || '',
-        username: this.props.user?.firstName || '',
-        password: this.props.user?.firstName || '',
-        gender: this.props.user?.firstName || '',
-        pictureUrl: this.props.user?.firstName || '',
-        description: this.props.user?.firstName || ''
+        lastName: this.props.user?.lastName || '',
+        username: this.props.user?.username || '',
+        password: this.props.user?.password || '',
+        gender: this.props.user?.gender || '',
+        pictureUrl: this.props.user?.pictureUrl || '',
+        description: this.props.user?.description || ''
     }
     handleUserSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -36,12 +36,12 @@ class UserInput extends Component<UserInputProps, UserInputState> {
             new User(this.state.firstName, this.state.lastName, this.state.username, this.state.password, this.state.gender, this.state.pictureUrl, this.state.description, (this.state.id ? parseInt(this.state.id) : undefined), UserRole.USER));
         this.setState({ id: this.props.user?.id?.toString() || '',
         firstName: this.props.user?.firstName || '',
-        lastName: this.props.user?.firstName || '',
-        username: this.props.user?.firstName || '',
-        password: this.props.user?.firstName || '',
-        gender: this.props.user?.firstName || '',
-        pictureUrl: this.props.user?.firstName || '',
-        description: this.props.user?.firstName || '' })
+        lastName: this.props.user?.lastName || '',
+        username: this.props.user?.username || '',
+        password: this.props.user?.password || '',
+        gender: this.props.user?.gender || '',
+        pictureUrl: this.props.user?.pictureUrl || '',
+        description: this.props.user?.description || '' })
     }
 
     handleTextChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,12 +54,12 @@ class UserInput extends Component<UserInputProps, UserInputState> {
         event.preventDefault();
         this.setState({ id: this.props.user?.id?.toString() || '',
         firstName: this.props.user?.firstName || '',
-        lastName: this.props.user?.firstName || '',
-        username: this.props.user?.firstName || '',
-        password: this.props.user?.firstName || '',
-        gender: this.props.user?.firstName || '',
-        pictureUrl: this.props.user?.firstName || '',
-        description: this.props.user?.firstName || '' })
+        lastName: this.props.user?.lastName || '',
+        username: this.props.user?.username || '',
+        password: this.props.user?.password || '',
+        gender: this.props.user?.gender || '',
+        pictureUrl: this.props.user?.pictureUrl || '',
+        description: this.props.user?.description || '' })
     }
 
     render() {
